@@ -5,11 +5,14 @@ This is a top 4% (221st of 5500) solution to the [M5 Forecasting competition](ht
 The purpose of the competition is to forecast unit sales for 30490 items, 28 days into the future. Hence, we are making 30490 * 28 = 853720 predictions.  
   
 ### Solution Outline
+
 The solution is written purely in R and leverages the data.table and LightGBM packages. The model building process uses 21 predictor variables to forecast one day into the future.  
 
 Three models are created. All models use a random sample of the training data as validation data - otherwise, the model buidling process is identical.  
   
 Recursive models are used, that is, we use Day 1 predictions as part of our feature engineering to then forecast Day 2, and so forth.  
+
+This [Kaggle Discussion](https://www.kaggle.com/c/m5-forecasting-accuracy/discussion/163092) post provides some more technical insights into my methodology.  
 
 ### Software Design
 
